@@ -898,7 +898,6 @@ config NR_LRU_GENS
 	default 7
 	help
 	  This will use order_base_2(N+1) spare bits from page flags.
-
 	  Warning: do not use numbers larger than necessary because each
 	  generation introduces a small per-node and per-memcg memory overhead.
 
@@ -915,3 +914,11 @@ config TIERS_PER_GEN
 # }
 
 endmenu
+
+config VM_MAX_READAHEAD
+	int "default max readahead window size"
+	default 512
+	help
+	 This sets the VM_MAX_READAHEAD value to allow the readahead window
+	 to grow to a maximum size of configured. This will benefit sequential
+	 read throughput and thus early boot performance.
