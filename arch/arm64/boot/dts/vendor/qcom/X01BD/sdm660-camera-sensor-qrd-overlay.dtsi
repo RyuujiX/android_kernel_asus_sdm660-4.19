@@ -33,6 +33,7 @@
 	};
 
 	/delete-node/ cam_vaf_gpio_regulator;
+	/delete-node/ cam_rear_dvdd_fixed_regulator;
 };
 
 &tlmm {
@@ -75,7 +76,7 @@
 	};
 
 	/delete-node/ qcom,actuator@1;
-	/delete-node/ qcom,ois;
+	/delete-node/ qcom,ois@0;
 
 	eeprom0: qcom,eeprom@0 {
 		cam_vdig-supply = <&pm660_s5>;
