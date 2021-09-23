@@ -1,0 +1,122 @@
+<b><#selectbg_g>September 23,2021</#></b>
+
+  <*> Bringup KnightWalker-Hajime</*>
+  <*> (OC) CPU 1.8+2.2GHz</*>
+  <*> (OC) (X00TD) GPU 585MHz</*>
+  <*> (OC) (X01BD) GPU 750MHz</*>
+  <*> Added Spectrum Support</*>
+  <*> Merged Linux Stable 4.19.207 Tag</*>
+  <*> msm: camera: Do not wait for complete during driver_probe</*>
+  <*> {X00TD,X01BD}_defconfig: Disable BFQ and CFQ Group IO Sched</*>
+  <*> kernel: time: reduce ntp wakeups</*>
+  <*> drivers: cpuidle: lpm-levels: Correct missing list initialize</*>
+  <*> cpufreq: schedutil: Enforce realtime priority</*>
+  <*> sched: features: Disable EAS_PREFER_IDLE</*>
+  <*> cpufreq_schedutil: remove tracing</*>
+  
+<b><#selectbg_g>September 22,2021</#></b>
+
+  <*> power: fg-util: Calculate battery more linearly</*>
+  <*> adrenoboost: update mode medium and high</*>
+  <*> msm_adreno_tz: add adrenoboost</*>
+  <*> mm: Optimize Kernel Samepage Merging</*>
+  <*> {X00TD,X01BD}_defconfig: Enable Kernel Samepage Merging Support</*>
+  <*> {X00TD,X01BD}_defconfig: Enable LZ4HC,ZSTD,FRONTSWAP,ZSWAP,ZPOOL,ZBUD</*>
+
+<b><#selectbg_g>September 20,2021</#></b>
+
+  <*> Introduce Adreno idler for devfreq-based Adreno devices</*>
+  <*> devfreq: Add Simple GPU Algorithm</*>
+
+<b><#selectbg_g>September 19,2021</#></b>
+
+  <*> msm: camera: Do not wait for complete during driver_probe</*>
+  <*> msm: cpp: Reduce cpp timeout on MC error</*>
+  <*> msm_ispif: Increase timeout to 10 seconds from 1 second.</*>
+  <*> cpufreq: schedutil: Simplify iowait boosting</*>
+  <*> ANDROID: sched: EAS: take cstate into account when selecting idle core</*>
+  <*> Revert "sched/fair: Add policy for restricting prefer_spread to newly idle balance"</*>
+  <*> {X00TD,X01BD}_defconfig: Use PELT 16ms Scheduler</*>
+  <*> ANDROID: sched/fair: correct pelt load information in sched-pelt.h</*>
+  <*> FROMLIST: sched/fair: add support to tune PELT ramp/decay timings</*>
+  <*> mbcache: Speed up cache entry creation</*>
+  <*> {X00TD,X01BD}_defconfig: Use 300HZ Timer Freq</*>
+  <*> workqueue: Schedule workers on CPU0 or 0-3 by default</*>
+  <*> treewide : enable O3 optimization</*>
+  <*> thermal: core: skip update disabled thermal zones after suspend</*>
+  <*> drivers: thermal: Don't qualify thermal polling as high priority</*>
+
+<b><#selectbg_g>September 18,2021</#></b>
+
+  <*> {X00TD,X01BD}_defconfig: Disable CPU Freq Times</*>
+  <*> ARM64: dts: sdm660: Enable 300MHz CPU Freq</*>
+  <*> sched: features: disable gentle_fair_sleeper</*>
+  <*> Added fsync on/off support.</*>
+  <*> msm: ipa: Do not acquire wakelocks</*>
+  <*> rcu: fix a performance regression</*>
+  <*> gpu: msm: kgsl_iommu: Don't program SMMU aperture on SDM636/660</*>
+  <*> msm: kgsl: Relax CPU latency requirements to save power</*>
+  <*> Makefile: Optimize for SDM660 Family</*>
+  <*> mmc: disable crc and make it sw toggable</*>
+  <*> block: Do not collect I/O statistics</*>
+  <*> PM: sleep: Don't allow s2idle to be used</*>
+  <*> Added and Enabled Boeffla WL Blocker</*>
+
+<b><#selectbg_g>September 17,2021</#></b>
+
+  <*> ARM64: dts: Avoid L2PC on big cluster CPUs</*>
+  <*> ARM64: dts: sdm660: Add 633 and 902 MHz CPU Freq for big Cluster</*>
+  <*> ARM64: dts: sdm660: Add CLUSTER_COST and Recalculate Energy Model</*>
+  <*> ARM64: dts: sdm660: Set Bootargs</*>
+  <*> ARM64: dts: qcom: Add memlat stall event </*>
+  <*> thermal: Increase thermal trip points to 16</*>
+  <*> qcacld-3.0: Do not allow any wakelocks to be held</*>
+  <*> PM / Sleep: Add wake lock api wrapper on top of wakeup sources</*>
+  <*> mm: Do not periodically flush dirty pages</*>
+  <*> power: qpnp-fg-gen3: queue work on system_power_efficient_wq</*>
+  <*> drivers: mdss: queue work on system_power_efficient_wq</*>
+  <*> power: qcom/battery: queue work on system_power_efficient_wq</*>
+  <*> gpu: drm: use power efficient working queues</*>
+  <*> techpack: use power efficient working queues</*>
+  <*> workqueue: queue everything on system's power efficient wq</*>
+  <*> fs: {ext4, f2fs}: Remove CAF tracings</*>
+  <*> f2fs: Implement Rapid GC and other fixes</*>
+  <*> fs: ext4: fsync: optimize double-fsync() a bunch</*>
+  <*> Revert "power: step-chg-jeita: Add support to tune hysteresis for jeita-fcc-step"</*>
+  <*> Revert "qcom: step-chg-jeita: Add support for jeita fcc scaling"</*>
+  <*> EXT4 optimizations</*>
+  <*> smb-lib: disable vote by system thermal</*>
+  <*> ARM64: dts: Enable ulps mode and panel-allow-phy-poweroff mode</*>
+  <*> power: qpnp-fg-gen3: disable fg_adjust_timebase</*>
+  <*> ARM64: dts: nt36672: Disable ESD Check</*>
+
+<b><#selectbg_g>September 16,2021</#></b>
+
+  <*> kernel: workqueue: Make it Toggleable and Enable by Default</*>
+  <*> tcp: Disable ping replies by default</*>
+  <*> tcp: Increase max connections to accept</*>
+  <*> ARM64: dts: prefer qcom,kryo over arm,armv8</*>
+  <*> ARM64: dts: sdm660-gpu: Disable GPU wake up on touch event</*>
+  <*> Optimized Console FrameBuffer for upto 70% increase in Performance</*>
+  <*> PM: devfreq: Use high priority workqueue</*>
+  <*> slimbus: Fix potential memory leak</*>
+  <*> msm: kgsl: Set Worker Thread Priority (6)</*>
+  <*> msm: msm_bus: Don't enable QoS clocks when none are present</*>
+  <*> msm: kgsl: Increase worker thread priority</*>
+  <*> smb-lib: Increase Charging Speed</*>
+  <*> Enable many TCP Congestions</*>
+
+<b><#selectbg_g>September 15,2021</#></b>
+
+  <*> power: qpnp-smb2: Use LIPO instead of LION</*>
+  <*> drivers: misc: implement usb fast charge mode</*>
+  <*> mdss_fb: add backlight dimmer option</*>
+  <*> mm: swap: swap pages one at a time</*>
+  <*> kernel/power: faster deepsleep</*>
+  <*> drivers: avoid VLA</*>
+  <*> soc: qcom: subsystem_restart: Prevent kernel panic caused by modem crash</*>
+  <*> lib/lz4: explicitly support in-place decompression</*>
+  <*> lz4: fix kernel decompression speed</*>
+  <*> lib/lz4: update LZ4 decompressor module</*>
+  <*> Upstreamed Wireguard</*>
+  <*> Switched Low Memory Killer to ALMK</*>
