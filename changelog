@@ -1,33 +1,20 @@
-<b><#selectbg_g>October 17,2021</#></b>
+<b><#selectbg_g>November 7,2021</#></b>
 
-  <*> Bringup KnightWalker-ハツコイ-Hatsukoi</*>
-  <*> Merged CAF LA.UM.9.2.1.r1-08300-sdm660.0 Tag</*>
-  <*> Merged Linux Stable 4.19.212 Tag</*>
+  <*> Bringup KnightWalker-コナタ-Konata</*>
+  <*> Updated Thermals from Lime-Q-OSS Source</*>
 
-<b><#selectbg_g>October 14,2021</#></b>
+<b><#selectbg_g>November 6,2021</#></b>
 
-  <*> Makefile: Optimize for Size</*>
-  <*> {X00TD, X01BD}_defconfig: Disable SYSRQ Keys Over Serial</*>
-  <*> {X00TD, X01BD}_defconfig: Set CONFIG_DEFAULT_MMAP_MIN_ADDR=32768</*>
-  <*> {X00TD,X01BD}_defconfig: Cleanup Unused Configs</*>
-  <*> Merged Linux Stable 4.19.210,211 Tags</*>
+  <*> Merged Linux 4.19.216</*>
+  <*> ARM64: dts/qcom: {X00TD,X01BD}: Increase Charging Speed</*>
 
-<b><#selectbg_g>October 7,2021</#></b>
+<b><#selectbg_g>November 4,2021</#></b>
 
-  <*> bfq: Upstream Patches from ChromeOS Kernel</*>
-
-<b><#selectbg_g>October 6,2021</#></b>
-
-  <*> Merged Linux Stable 4.19.208,209 Tags</*>
-  
-<b><#selectbg_g>October 5,2021</#></b>
-
-  <*> sdm660-overlay: Add Fixed CPU Clocks</*>
-  <*> Disabled ZRAM DEDUP, Audit, and Userspace LMK Support</*>
-  <*> Enabled ZRAM Writeback</*>
-  <*> ARM64: dts/qcom: {X00TD, X01BD}: Adapt Battery Nodes to msm-4.19</*>
-  
-<b><#selectbg_g>October 4,2021</#></b>
-
-  <*> ARM64: dts/qcom: X01BD: Set panel max-bl values to 3259</*>
-  <*> kbuild: Add support for LLVM's Polly optimizer</*>
+  <*> Merged Linux 4.19.213~215</*>
+  <*> Merged CAF LA.UM.9.2.1.r1-08700-sdm660.0</*>
+  <*> Switched to PELT 12ms HALFLIFE</*>
+  <*> sdm660: Undeclare Cooling Cells</*>
+  <*> Battery Temperature Show more precision</*>
+  <*> Removed GPU Powerlevel ( Deprecated )</*>
+  <*> Nuked 300MHz, (633MHz & 900MHz big) CPU Freqs ( Inefficient )</*>
+  <*> AK3: Upstreamed and Updated</*>
