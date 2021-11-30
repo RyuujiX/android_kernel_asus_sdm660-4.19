@@ -1,20 +1,29 @@
-<b><#selectbg_g>November 7,2021</#></b>
+<b><#selectbg_g>November 28,2021</#></b>
 
-  <*> Bringup KnightWalker-コナタ-Konata</*>
-  <*> Updated Thermals from Lime-Q-OSS Source</*>
+  <*> Bringup KnightWalker-アヤカ-Ayaka</*>
+  <*> Merged Linux 4.19.218</*>
 
-<b><#selectbg_g>November 6,2021</#></b>
+<b><#selectbg_g>November 15,2021</#></b>
 
-  <*> Merged Linux 4.19.216</*>
-  <*> ARM64: dts/qcom: {X00TD,X01BD}: Increase Charging Speed</*>
+  <*> subsystem_restart: Always performs soft resets when subsystems crash</*>
+  <*> Revert "genirq/irqdomain: Don't try to free an interrupt that has no mapping"</*>
+  <*> Revert "soc: qcom: subsystem_restart: Prevent kernel panic caused by modem crash"</*>
 
-<b><#selectbg_g>November 4,2021</#></b>
+<b><#selectbg_g>November 14,2021</#></b>
 
-  <*> Merged Linux 4.19.213~215</*>
-  <*> Merged CAF LA.UM.9.2.1.r1-08700-sdm660.0</*>
-  <*> Switched to PELT 12ms HALFLIFE</*>
-  <*> sdm660: Undeclare Cooling Cells</*>
-  <*> Battery Temperature Show more precision</*>
-  <*> Removed GPU Powerlevel ( Deprecated )</*>
-  <*> Nuked 300MHz, (633MHz & 900MHz big) CPU Freqs ( Inefficient )</*>
-  <*> AK3: Upstreamed and Updated</*>
+  <*> qcacmn: Merged tag LA.UM.9.2.1.r1-08700-sdm660.0</*>
+  <*> qcacld-3.0: Merged tag LA.UM.9.2.1.r1-08700-sdm660.0</*>
+  <*> Fixed Broken and Enable BCL</*>
+  <*> devfreq: Add and Enable SPDM Driver</*>
+  <*> msm: msm_bus: Use some bus IDs from 4.4 kernel</*>
+  <*> ARM64: dts: X00TD: Configure Ramoops</*>
+
+<b><#selectbg_g>November 13,2021</#></b>
+
+  <*> Merged Linux 4.19.217</*>
+
+<b><#selectbg_g>November 11,2021</#></b>
+
+  <*> adreno_idler: Enable by default and Tuned</*>
+  <*> techpack: Merged CAF LA.UM.10.2.1.r1-02700-sdm660.0</*>
+  <*> Merged CAF LA.UM.10.2.1.r1-02700-sdm660.0</*>
