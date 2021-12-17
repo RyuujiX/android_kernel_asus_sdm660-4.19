@@ -89,11 +89,7 @@ static int lmk_fast_run = 1;
 
 static unsigned long lowmem_deathpending_timeout;
 
-#define lowmem_print(level, x...)			\
-	do {						\
-		if (lowmem_debug_level >= (level))	\
-			pr_info(x);			\
-	} while (0)
+#define lowmem_print(level, x...)
 
 static unsigned long lowmem_count(struct shrinker *s,
 				  struct shrink_control *sc)
@@ -634,14 +630,8 @@ static unsigned long lowmem_scan(struct shrinker *s, struct shrink_control *sc)
 
 		task_lock(selected);
 		send_sig(SIGKILL, selected, 0);
-		if (selected->mm) {
+		if (selected->mm)
 			task_set_lmk_waiting(selected);
-			if (!test_bit(MMF_OOM_SKIP, &selected->mm->flags) &&
-			    oom_reaper) {
-				mark_lmk_victim(selected);
-				wake_oom_reaper(selected);
-			}
-		}
 		task_unlock(selected);
 		trace_lowmemory_kill(selected, cache_size, cache_limit, free);
 		lowmem_print(1, "Killing '%s' (%d) (tgid %d), adj %hd,\n"
