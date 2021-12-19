@@ -14,7 +14,7 @@ This Kernel is Overclocked. If u want go Back to Stock Freq, Do this:
 
 On Branch r1/s:
 ```bash
-   git revert 59e887a5fb7026e9ccb99365ffe5d91b6286307c --no-commit && \
+   git revert 18848d6a864bbc70fcd46001a01127c3cbd70ded -n && \
    git commit -m "Use Back Stock Freq"
 ```
 

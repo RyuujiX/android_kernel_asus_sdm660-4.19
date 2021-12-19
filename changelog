@@ -1,29 +1,52 @@
-<b><#selectbg_g>November 28,2021</#></b>
+<b><#selectbg_g>December 17,2021</#></b>
 
-  <*> Bringup KnightWalker-アヤカ-Ayaka</*>
-  <*> Merged Linux 4.19.218</*>
+  <*> Bringup KnightWalker-高木-Takagi</*>
+  <*> Compiled with Snapdragon LLVM Clang 14 + GCC 4.9</*>
+  <*> Revert "ARM64: dts: sdm660-gpu: Disable GPU wake up on touch event"</*>
+  <*> Revert "sdm660: Add Fixed CPU Clocks"</*>
 
-<b><#selectbg_g>November 15,2021</#></b>
+<b><#selectbg_g>December 15,2021</#></b>
 
-  <*> subsystem_restart: Always performs soft resets when subsystems crash</*>
-  <*> Revert "genirq/irqdomain: Don't try to free an interrupt that has no mapping"</*>
-  <*> Revert "soc: qcom: subsystem_restart: Prevent kernel panic caused by modem crash"</*>
+  <*> Revert "Makefile: Optimize for our CPU"</*>
+  <*> Revert "Makefile: Pass optimization flags to assembler"</*>
+  <*> binder: please shut up</*>
+  <*> binder: Fix log spam caused by interrupted waits</*>
 
-<b><#selectbg_g>November 14,2021</#></b>
+<b><#selectbg_g>December 14,2021</#></b>
 
-  <*> qcacmn: Merged tag LA.UM.9.2.1.r1-08700-sdm660.0</*>
-  <*> qcacld-3.0: Merged tag LA.UM.9.2.1.r1-08700-sdm660.0</*>
-  <*> Fixed Broken and Enable BCL</*>
-  <*> devfreq: Add and Enable SPDM Driver</*>
-  <*> msm: msm_bus: Use some bus IDs from 4.4 kernel</*>
-  <*> ARM64: dts: X00TD: Configure Ramoops</*>
+  <*> Merged Linux 4.19.221</*>
+  <*> Revert "kbuild: Add support for LLVM's Polly optimizer"</*>
 
-<b><#selectbg_g>November 13,2021</#></b>
+<b><#selectbg_g>December 13,2021</#></b>
 
-  <*> Merged Linux 4.19.217</*>
+  <*> ARM64: dts: qcom: Remove all instances of IRQ_TYPE_NONE</*>
+  <*> block: remove legacy IO schedulers</*>
+  <*> Some BACKPORT for ZSTD, F2FS, Kyber IOSched, & Init</*>
+  <*> Makefile.lib: Lower kernel gzip compression to fastest</*>
+  <*> {X00TD, X01BD}_defconfig: Disable LTO</*>
+  <*> ARM64: dts: sdm660: Fallback to normal RCU after boot</*>
+  <*> Revert "ARM64: dts: Avoid L2PC on big cluster CPUs"</*>
 
-<b><#selectbg_g>November 11,2021</#></b>
+<b><#selectbg_g>December 8,2021</#></b>
 
-  <*> adreno_idler: Enable by default and Tuned</*>
-  <*> techpack: Merged CAF LA.UM.10.2.1.r1-02700-sdm660.0</*>
-  <*> Merged CAF LA.UM.10.2.1.r1-02700-sdm660.0</*>
+  <*> Merged Linux 4.19.220</*>
+
+<b><#selectbg_g>December 4,2021</#></b>
+
+  <*> ipa_v3: Mitigate usleep_range calls</*>
+  <*> platform: ipa: use power efficient working queues</*>
+  <*> cpu-boost: Avoid boosting over user set max freq</*>
+  <*> cpu-boost: Optimize policy update loop on input boost</*>
+  <*> cpufreq: Don't WARN_ON on non-existent cpu</*>
+  <*> qcom-cpufreq: Limit the rate of CPU clock-rate changes</*>
+  <*> sched/fair: Reduce sched migration cost to 2ms</*>
+  <*> kernel: Fix cpufreq times memory leaks</*>
+  <*> {X00TD,X01BD}_defconfig: Enable Devfreq Boost and CPU Freq Times</*>
+  <*> devfreq_boost: Introduce devfreq boost driver</*>
+  <*> ARM64: dts: sdm660: Use Back Stock SDM660 Energy Model</*>
+
+<b><#selectbg_g>December 3,2021</#></b>
+
+  <*> {X00TD,X01BD}_defconfig: Enable WALT & Use Back PELT 16ms</*>
+  <*> thermal_core: Use power efficient workqueue</*>
+  <*> Merged Linux 4.19.219</*>
