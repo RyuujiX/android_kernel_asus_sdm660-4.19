@@ -96,6 +96,7 @@
 #include <linux/cpufreq_times.h>
 #include <linux/scs.h>
 #include <linux/devfreq_boost.h>
+#include <linux/kprofiles.h>
 
 #include <asm/pgtable.h>
 #include <asm/pgalloc.h>
@@ -2344,8 +2345,13 @@ long _do_fork(unsigned long clone_flags,
 	long nr;
 
 	/* Boost DDR bus to the max for 50 ms when userspace launches an app */
-	if (task_is_zygote(current))
-		devfreq_boost_kick_max(DEVFREQ_MSM_CPUBW, 50);
+	if (task_is_zygote(current)) { 
+		if (active_mode() == 2) {
+		  devfreq_boost_kick_max(DEVFREQ_MSM_CPUBW, 20);
+		} else if (active_mode() == 3) {
+		  devfreq_boost_kick_max(DEVFREQ_MSM_CPUBW, 50);
+		}
+	}
 	
 	/*
 	 * Determine whether and which event to report to ptracer.  When
