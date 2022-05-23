@@ -13,6 +13,7 @@
 #include <linux/mm.h>
 #include <linux/msm_adreno_devfreq.h>
 #include <linux/state_notifier.h>
+#include <linux/kprofiles.h>
 #include <asm/cacheflush.h>
 #include <soc/qcom/scm.h>
 #include <soc/qcom/qtee_shmbridge.h>
@@ -483,6 +484,15 @@ static int tz_get_target_freq(struct devfreq *devfreq, unsigned long *freq)
 
 	priv->bin.total_time += stats->total_time;
 #if 1
+	/* Change AdrenoBoost Level Based on KProfiles */
+	if (active_mode() == 1) {
+		adrenoboost = 0;
+	} else if (active_mode() == 2) {
+		adrenoboost = 1;
+	} else if (active_mode() == 3) {
+		adrenoboost = 3;
+	}
+	
 	// scale busy time up based on adrenoboost parameter, only if MIN_BUSY exceeded...
 //	if ((unsigned int)(priv->bin.busy_time + stats->busy_time) >= MIN_BUSY && adrenoboost) {
 	if (adrenoboost) {
