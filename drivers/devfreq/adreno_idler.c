@@ -32,6 +32,7 @@
 #include <linux/devfreq.h>
 #include <linux/state_notifier.h>
 #include <linux/msm_adreno_devfreq.h>
+#include <linux/kprofiles.h>
 
 #define ADRENO_IDLER_MAJOR_VERSION 1
 #define ADRENO_IDLER_MINOR_VERSION 1
@@ -65,7 +66,7 @@ static unsigned int idlecount = 0;
 int adreno_idler(struct devfreq_dev_status *stats, struct devfreq *devfreq,
 		 unsigned long *freq)
 {
-	if (!adreno_idler_active)
+	if (active_mode() == 3 || !adreno_idler_active)
 		return 0;
 
 	if (stats->busy_time < idleworkload) {
