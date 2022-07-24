@@ -13,9 +13,25 @@
 #include <linux/slab.h>
 #include <linux/thermal.h>
 #include <linux/moduleparam.h>
+#include <linux/init.h>
 
-bool enabled = true;
+bool __read_mostly enabled = true;
 module_param(enabled, bool, 0664);
+
+static int __init get_status(char *s)
+{
+    int status;
+	if (s)
+		status = simple_strtoul(s, NULL, 0);
+		
+	if ( status > 0 )
+		enabled = true;
+	else
+		enabled = false;
+
+	return 1;
+}
+__setup("simple_thermal_enabled=", get_status);
 
 #define OF_READ_U32(node, prop, dst)						\
 ({										\
