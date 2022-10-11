@@ -1026,10 +1026,8 @@ Description:
 return:
 	n.a.
 *******************************************************/
-static void nvt_ts_worker(struct work_struct *work)
+static irqreturn_t nvt_ts_work_func(int irq, void *data)
 {
-	struct nvt_ts_data *ts = container_of(work, struct nvt_ts_data, irq_work);
-
 	int32_t ret = -1;
 	uint8_t point_data[POINT_DATA_LEN + 1] = {0};
 	uint32_t position = 0;
@@ -1082,7 +1080,7 @@ static void nvt_ts_worker(struct work_struct *work)
 		nvt_ts_wakeup_gesture_report(input_id, point_data);
 		nvt_irq_enable(true);
 		mutex_unlock(&ts->lock);
-		return;
+		return IRQ_HANDLED;
 	}
 #endif
 
@@ -1180,14 +1178,6 @@ static void nvt_ts_worker(struct work_struct *work)
 XFER_ERROR:
 
 	mutex_unlock(&ts->lock);
-	return;
-}
-
-static irqreturn_t nvt_ts_work_func(int irq, void *data)
-{
-	struct nvt_ts_data *ts = data;
-
-	queue_work(ts->coord_workqueue, &ts->irq_work);
 
 	return IRQ_HANDLED;
 }
@@ -1506,13 +1496,6 @@ static int32_t nvt_ts_probe(struct i2c_client *client, const struct i2c_device_i
 	queue_delayed_work(nvt_fwu_wq, &ts->nvt_fwu_work, msecs_to_jiffies(14000));
 #endif
 
-	ts->coord_workqueue = alloc_workqueue("nvt_ts_workqueue", WQ_HIGHPRI, 0);
-	if (!ts->coord_workqueue) {
-		ret = -ENOMEM;
-		goto err_create_nvt_ts_workqueue_failed;
-	}
-	INIT_WORK(&ts->irq_work, nvt_ts_worker);
-
 	NVT_LOG("NVT_TOUCH_ESD_PROTECT is %d\n", NVT_TOUCH_ESD_PROTECT);
 #if NVT_TOUCH_ESD_PROTECT
 	INIT_DELAYED_WORK(&nvt_esd_check_work, nvt_esd_check_func);
@@ -1602,9 +1585,6 @@ err_register_drm_notif_failed:
 	if (fb_unregister_client(&ts->fb_notif))
 		NVT_ERR("Error occurred while unregistering fb_notifier.\n");
 err_register_fb_notif_failed:
-err_create_nvt_ts_workqueue_failed:
-	if (ts->coord_workqueue)
-		destroy_workqueue(ts->coord_workqueue);
 #endif
 #elif defined(CONFIG_HAS_EARLYSUSPEND)
 	unregister_early_suspend(&ts->early_suspend);
@@ -1680,9 +1660,6 @@ return:
 static int32_t nvt_ts_remove(struct i2c_client *client)
 {
 	NVT_LOG("Removing driver...\n");
-	
-	if (ts->coord_workqueue)
-		destroy_workqueue(ts->coord_workqueue);
 
 #if defined(CONFIG_FB)
 #ifdef _MSM_DRM_NOTIFY_H_
