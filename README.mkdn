@@ -3,7 +3,7 @@ KnightWalker 4.19.x Kernel Source
 
 Getting Started
 ---------------
-You can use this source if u Want ,
+You can use this source if u Want or Download Builded Kernel / Release build from this https://telegra.ph/Projekt-Walker-419-Kernel-Download-Links-09-25 ,
 
 Clone with `--recursive` option coz this source has submodule.
 
